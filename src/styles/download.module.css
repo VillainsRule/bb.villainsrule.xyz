@@ -1,0 +1,38 @@
+.tryBB {
+    margin-top: 18vh;
+    font-size: 8vh;
+    font-weight: bold;
+    text-align: center;
+}
+
+.leftSites {
+    display: flex;
+    justify-content: center;
+    gap: 5vh;
+    margin-top: 2.5vh;
+}
+
+.siteIcon {
+    height: 8vh;
+    width: 8vh;
+    cursor: pointer;
+    filter: drop-shadow(0 0 8px black);
+}
+
+.tutorial {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 6vh;
+    font-size: 3.5vh;
+}
+
+.link {
+    text-decoration: underline;
+}
+
+.warning {
+    background: rgba(255, 255, 0, 0.5);
+    padding: 3vh 5vw;
+    font-size: 1.5vw;
+    margin-top: 4vh;
+}

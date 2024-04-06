@@ -1,0 +1,47 @@
+.mainContent {
+    position: absolute;
+    top: 18vh;
+    left: 10vw;
+    width: 80vw;
+    height: 78vh;
+    text-align: center;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.mainContent::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    font-family: 'Titan One';
+    font-size: 5vh;
+}
+
+.helpNote {
+    font-size: 2.5vh;
+    font-family: 'Nunito';
+    margin-top: 1.5vh;
+}
+
+.questions {
+    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8vh 7vw;
+}
+
+.questionText {
+    font-size: 3.65vh;
+    font-weight: bold;
+}
+
+.answerText {
+    margin-top: 1vh;
+}
+
+.link {
+    font-weight: bold;
+    text-decoration: underline;
+}

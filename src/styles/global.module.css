@@ -1,0 +1,69 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,700|Titan+One);
+
+* {
+    color: white;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background: #111214;
+    margin: 0;
+    font-family: 'Nunito';
+}
+
+a {
+    text-decoration: none;
+}
+
+.background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/img/bg.png');
+    background-size: 80%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.header {
+    position: fixed;
+    top: 2vh;
+    left: 5vw;
+    right: 5vw;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.siteTitle {
+    font-family: 'Titan One';
+    font-size: 6vh;
+    text-decoration: none;
+    margin-left: 1.5vw;
+    cursor: pointer;
+}
+
+.headerLinks {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 4vw;
+    margin-right: 1.5vw;
+}
+
+.headerLink {
+    font-size: 3.9vh;
+    text-decoration: none;
+}

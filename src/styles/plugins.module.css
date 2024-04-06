@@ -1,0 +1,102 @@
+.plugins {
+    position: absolute;
+    top: 17vh;
+    height: 80vh;
+    width: 100%;
+    overflow: scroll;
+}
+
+.topBanner {
+    position: absolute;
+    left: 5%;
+    width: calc(90% - 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 2vh;
+    padding: 20px;
+}
+
+.bannerTitle {
+    font-family: 'Titan One';
+    font-size: 8vh;
+}
+
+.bannerDescription {
+    font-size: 4vh;
+    margin-top: 1vh;
+}
+
+.bannerSearch {
+    font-size: 3.5vh;
+    padding: 1.5vh 10vw;
+    margin-top: 3vh;
+    font-family: 'Nunito';
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 1vh;
+    text-align: center;
+    outline: none;
+}
+
+.bannerSearch:focus::placeholder {
+    color: transparent;
+}
+
+.pluginHolder {
+    position: absolute;
+    top: 34vh;
+    left: 5vw;
+    width: 90vw;
+    height: auto;
+    display: grid;
+    grid-gap: 3vw;
+    grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+    margin-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.plugin {
+    width: 27vw;
+    max-width: 27vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 1vw;
+    transition: 150ms ease;
+    transform: translate(0, 0);
+    cursor: pointer;
+}
+
+.plugin:hover {
+    transform: translateY(-5px);
+}
+
+.pluginInfo {
+    padding: 1.5vw 2vw;
+    text-align: center;
+}
+
+.pluginTitle {
+    font-size: 5vh;
+}
+
+.pluginAuthor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+    font-size: 3.1vh;
+    font-weight: bold;
+    margin-top: 0.5vh;
+}
+
+.pluginAuthorProfile {
+    height: 4.5vh;
+    width: 4.5vh;
+}
+
+.pluginDescription {
+    font-size: 1.25vw;
+    margin-top: 1.5vh;
+}

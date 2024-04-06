@@ -1,0 +1,6 @@
+# bundled node contents
+node_modules/
+package-lock.json
+
+# mac config
+**/.DS_Store

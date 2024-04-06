@@ -1,0 +1,87 @@
+.topText {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modName {
+    margin-top: 18vh;
+    font-family: 'Titan One';
+    font-size: 12vh;
+    font-weight: 500;
+}
+
+.modDesc {
+    font-size: 4.8vh;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    margin-top: 4vh;
+}
+
+.button {
+    font-size: 3.5vh;
+    border: 2px solid white;
+    padding: 1.5vh 3vw;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fullButton {
+    font-size: 4.5vh;
+    border: 2px solid white;
+    padding: 2vh 5vw;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover,
+.fullButton:hover {
+    background: white;
+    color: black;
+}
+
+.fullButton:hover a {
+    color: black;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-top: 10vh;
+}
+
+.featureCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 26%;
+}
+
+.featureHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.featureIcon {
+    height: 8vh;
+}
+
+.featureTitle {
+    font-size: 4vh;
+}
+
+.featureDesc {
+    margin-top: 2vh;
+    text-align: center;
+}

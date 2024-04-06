@@ -1,0 +1,30 @@
+.errorContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.errorBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5vh;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 5vh 10vw;
+    border-radius: 5px;
+}
+
+.errorTitle {
+    font-size: 8vh;
+    font-weight: 1000;
+}
+
+.errorDescription {
+    font-size: 4vh;
+    text-align: center;
+}
