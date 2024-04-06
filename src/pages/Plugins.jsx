@@ -8,13 +8,11 @@ import NavBar from '@components/NavBar';
 
 import styles from '@styles/plugins.module.css';
 
-import config from '@config';
-
 export default function Plugins() {
     const [plugins, setPlugins] = useState([]);
 
     useEffect(() => {
-        axios.get(config.pluginDataURL).then((res) => setPlugins(res.data));
+        axios.get('https://raw.githubusercontent.com/VillainsRule/BetterBlacket/master/dist/pluginData.json').then((res) => setPlugins(res.data));
     }, []);
 
     const navigate = useNavigate();

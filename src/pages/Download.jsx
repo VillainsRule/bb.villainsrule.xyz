@@ -35,7 +35,7 @@ export default function Download() {
 
             <ol className={styles.tutorial}>
                 <li>Download <a className={styles.link} href={downloadLinks[platform]} target='_blank'>Tampermonkey</a> from the official link.</li>
-                <li>Visit <a className={styles.link} href='https://raw.githubusercontent.com/VillainsRule/BetterBlacket/master/dist/bb.user.js' target='_blank'>this link</a> to install!</li>
+                <li>Visit <a className={styles.link} href='https://github.com/VillainsRule/BetterBlacket/raw/master/dist/bb.user.js' target='_blank'>this link</a> to install!</li>
                 <li>That's it! Enjoy BetterBlacket!</li>
             </ol>
 
