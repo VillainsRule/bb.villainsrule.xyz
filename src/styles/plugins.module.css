@@ -65,7 +65,6 @@
     border-radius: 1vw;
     transition: 150ms ease;
     transform: translate(0, 0);
-    cursor: pointer;
 }
 
 .plugin:hover {

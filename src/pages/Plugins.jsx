@@ -31,7 +31,7 @@ export default function Plugins() {
 
                 <div className={styles.pluginHolder}>
                     {plugins.length ? plugins.map((plugin) => (
-                        <div className={styles.plugin} key={plugin.title} onClick={() => navigate('/plugins/' + plugin.title.replaceAll(' ', ''))}>
+                        <div className={styles.plugin} key={plugin.title}>
                             <div className={styles.pluginInfo}>
                                 <div className={styles.pluginTitle}>{plugin.title}</div>
                                 <div className={styles.pluginAuthor}>

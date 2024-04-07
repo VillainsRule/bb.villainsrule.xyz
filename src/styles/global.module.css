@@ -3,6 +3,7 @@
 * {
     color: white;
     scrollbar-width: none;
+    cursor: default;
 }
 
 *::-webkit-scrollbar {
