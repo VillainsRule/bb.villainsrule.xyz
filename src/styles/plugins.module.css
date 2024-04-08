@@ -80,14 +80,8 @@
     font-size: 5vh;
 }
 
-.pluginAuthor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5vw;
-    font-size: 3.1vh;
-    font-weight: bold;
-    margin-top: 0.5vh;
+.pluginAuthors {
+    margin-right: 1vw;
 }
 
 .pluginAuthorProfile {
