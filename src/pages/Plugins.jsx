@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import Background from '@components/Background';
 import NavBar from '@components/NavBar';
@@ -14,8 +13,6 @@ export default function Plugins() {
     useEffect(() => {
         axios.get('https://raw.githubusercontent.com/VillainsRule/BetterBlacket/master/dist/pluginData.json').then((res) => setPlugins(res.data));
     }, []);
-
-    const navigate = useNavigate();
 
     return (
         <>
@@ -34,9 +31,9 @@ export default function Plugins() {
                         <div className={styles.plugin} key={plugin.title}>
                             <div className={styles.pluginInfo}>
                                 <div className={styles.pluginTitle}>{plugin.title}</div>
-                                <div className={styles.pluginAuthor}>
-                                    <img src={plugin.author.avatar} className={styles.pluginAuthorProfile} /> {plugin.author.name}
-                                </div>
+                                <div className={styles.pluginAuthors}>{plugin.authors.map((auth) => {
+                                    return <img src={auth.avatar} className={styles.pluginAuthorProfile} key={auth.name} />
+                                })}</div>
                                 <div className={styles.pluginDescription}>{plugin.description}</div>
                             </div>
                         </div>

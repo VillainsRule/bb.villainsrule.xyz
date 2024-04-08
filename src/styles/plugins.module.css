@@ -93,6 +93,8 @@
 .pluginAuthorProfile {
     height: 4.5vh;
     width: 4.5vh;
+    margin-right: -1vw;
+    border-radius: 50%;
 }
 
 .pluginDescription {
