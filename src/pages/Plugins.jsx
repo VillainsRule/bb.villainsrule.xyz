@@ -11,7 +11,8 @@ export default function Plugins() {
     const [plugins, setPlugins] = useState([]);
 
     useEffect(() => {
-        axios.get('https://raw.githubusercontent.com/VillainsRule/BetterBlacket/master/dist/pluginData.json').then((res) => setPlugins(res.data));
+        axios.get('https://raw.githubusercontent.com/VillainsRule/BetterBlacket/master/dist/pluginData.json').then((res) =>
+            setPlugins(res.data.sort((a, b) => a.title.localeCompare(b.title))));
     }, []);
 
     return (
