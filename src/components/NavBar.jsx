@@ -14,6 +14,7 @@ export default function NavBar() {
                     <Link to='/download' className={styles.headerLink}>Download</Link>
                     <Link to='/plugins' className={styles.headerLink}>Plugins</Link>
                     <Link to='/faq' className={styles.headerLink}>FAQ</Link>
+                    <div className={styles.headerLink} onClick={() => location.href = 'https://bbd.villainsrule.xyz'}>Docs</div>
                 </div>
             </div>
         </>
