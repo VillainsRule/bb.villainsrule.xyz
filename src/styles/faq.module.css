@@ -1,4 +1,4 @@
-.mainContent {
+.main {
     position: absolute;
     top: 18vh;
     left: 10vw;
@@ -6,12 +6,6 @@
     height: 78vh;
     text-align: center;
     overflow-y: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.mainContent::-webkit-scrollbar {
-    display: none;
 }
 
 .header {
@@ -19,14 +13,14 @@
     font-size: 5vh;
 }
 
-.helpNote {
+.subheader {
     font-size: 2.5vh;
-    font-family: 'Nunito';
+    font-family: 'DM Sans';
     margin-top: 1.5vh;
 }
 
 .questions {
-    margin-top: 5vh;
+    margin-top: 8vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 8vh 7vw;
@@ -44,4 +38,14 @@
 .link {
     font-weight: bold;
     text-decoration: underline;
+}
+
+.code {
+    font-family: monospace;
+    background: black;
+    border-radius: 2px;
+    padding: 2px 6px;
+    user-select: text;
+    -moz-user-select: text;
+    -webkit-user-select: text;
 }

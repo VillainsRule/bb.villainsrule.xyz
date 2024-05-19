@@ -1,9 +1,12 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito:400,700|Titan+One);
+@import url(https://fonts.googleapis.com/css?family=Titan+One|DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000);
 
 * {
     color: white;
-    scrollbar-width: none;
     cursor: default;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    scrollbar-width: none;
 }
 
 *::-webkit-scrollbar {
@@ -11,35 +14,30 @@
 }
 
 body {
-    background: #111214;
+    background: black;
     margin: 0;
-    font-family: 'Nunito';
+    font-family: 'DM Sans';
 }
 
 a {
     text-decoration: none;
 }
 
-.background {
+.orbs {
     position: fixed;
     left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('/img/bg.png');
-    background-size: 80%;
-    background-position: center center;
-    background-repeat: no-repeat;
     z-index: -1;
 }
 
-.header {
+.navbar {
     position: fixed;
-    top: 2vh;
-    left: 5vw;
-    right: 5vw;
+    top: 1vh;
+    left: 1vw;
+    right: 1vw;
     height: 10vh;
-    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,24 +45,30 @@ a {
     z-index: 10;
 }
 
-.siteTitle {
-    font-family: 'Titan One';
-    font-size: 6vh;
-    text-decoration: none;
+.left {
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+
+.icon {
+    height: 3vh;
     margin-left: 1.5vw;
+}
+
+.title {
+    font-family: 'Titan One';
+    font-weight: 1000;
+    font-size: 3vh;
+    text-decoration: none;
+    margin-left: 0.5vw;
+    margin-right: 2vw;
     cursor: pointer;
 }
 
-.headerLinks {
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    gap: 4vw;
+.link {
+    font-size: 2.8vh;
+    margin-left: 0.5vw;
     margin-right: 1.5vw;
-}
-
-.headerLink {
-    font-size: 3.9vh;
-    text-decoration: none;
+    cursor: pointer;
 }

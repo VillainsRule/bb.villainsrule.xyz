@@ -2,10 +2,9 @@ import axios from 'axios';
 
 import { useEffect, useState } from 'react';
 
-import Background from '@components/Background';
-import NavBar from '@components/NavBar';
+import NavBar from 'components/NavBar';
 
-import styles from '@styles/plugins.module.css';
+import styles from 'styles/plugins.module.css';
 
 export default function Plugins() {
     const [plugins, setPlugins] = useState([]);
@@ -17,19 +16,17 @@ export default function Plugins() {
 
     return (
         <>
-            <Background />
             <NavBar />
 
             <div className={styles.plugins}>
                 <div className={styles.topBanner}>
                     <div className={styles.bannerTitle}>Plugins</div>
-                    <div className={styles.bannerDescription}>Our easy-to-use preinstalled plugins.</div>
-                    <input className={styles.bannerSearch} placeholder='Search...'></input>
+                    <div className={styles.bannerDescription}>Our advanced list of plugins preinstalled with BetterBlacket!</div>
                 </div>
 
                 <div className={styles.pluginHolder}>
                     {plugins.length ? plugins.map((plugin) => (
-                        <div className={styles.plugin} key={plugin.title}>
+                        <div className={styles.plugin} key={plugin.title} onClick={() => window.open('https://bbd.villainsrule.xyz/plugins/' + plugin.path)}>
                             <div className={styles.pluginInfo}>
                                 <div className={styles.pluginTitle}>{plugin.title}</div>
                                 <div className={styles.pluginAuthors}>{plugin.authors.map((auth) => {

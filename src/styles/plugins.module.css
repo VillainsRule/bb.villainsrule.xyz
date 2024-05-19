@@ -1,6 +1,6 @@
 .plugins {
     position: absolute;
-    top: 17vh;
+    top: 13vh;
     height: 80vh;
     width: 100%;
     overflow: scroll;
@@ -14,7 +14,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 2vh;
     padding: 20px;
 }
@@ -33,7 +32,7 @@
     font-size: 3.5vh;
     padding: 1.5vh 10vw;
     margin-top: 3vh;
-    font-family: 'Nunito';
+    font-family: 'DM Sans';
     background-color: transparent;
     border: 2px solid white;
     border-radius: 1vh;
@@ -47,7 +46,7 @@
 
 .pluginHolder {
     position: absolute;
-    top: 34vh;
+    top: 22vh;
     left: 5vw;
     width: 90vw;
     height: auto;
@@ -61,8 +60,9 @@
 .plugin {
     width: 27vw;
     max-width: 27vw;
-    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
     border-radius: 1vw;
+    box-shadow: 0 0 1.5vw 0 black;
     transition: 150ms ease;
     transform: translate(0, 0);
 }

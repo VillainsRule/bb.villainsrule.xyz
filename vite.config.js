@@ -6,13 +6,13 @@ export default defineConfig({
 
     resolve: {
         alias: {
-            '@components': '/src/components',
-            '@styles': '/src/styles'
+            'components': '/src/components',
+            'styles': '/src/styles'
         }
     },
 
     server: {
-        port: 3000
+        port: 1212
     },
 
     css: {

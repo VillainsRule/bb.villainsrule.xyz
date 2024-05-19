@@ -1,0 +1,57 @@
+.main {
+    position: absolute;
+    top: 15vh;
+    left: 10vw;
+    width: 80vw;
+    height: 78vh;
+    text-align: center;
+    overflow-y: scroll;
+}
+
+.header {
+    font-family: 'Titan One';
+    font-size: 6vh;
+}
+
+.subheader {
+    font-size: 3vh;
+    margin-top: 1vh;
+    line-height: 4vh;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-top: 5vh;
+    gap: 8vh 10vw;
+}
+
+.featureCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 35%;
+}
+
+.featureHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.featureIcon {
+    height: 10vh;
+}
+
+.featureTitle {
+    font-size: 4vh;
+}
+
+.featureDesc {
+    margin-top: 2vh;
+    text-align: center;
+}

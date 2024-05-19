@@ -1,6 +1,6 @@
-import Background from '@components/Background';
+import Background from 'components/Background';
 
-import styles from '@styles/error.module.css';
+import styles from 'styles/error.module.css';
 
 export default function Error({ title, description }) {
     return (
@@ -8,10 +8,8 @@ export default function Error({ title, description }) {
             <Background />
 
             <div className={styles.errorContainer}>
-                <div className={styles.errorBox}>
-                    <div className={styles.errorTitle}>{title}</div>
-                    <div className={styles.errorDescription}>{description}</div>
-                </div>
+                <div className={styles.errorTitle}>{title} <img className={styles.errorIcon} src='/img/icon/face-injured.png' /></div>
+                <div className={styles.errorDescription}>{description}</div>
             </div>
         </>
     )

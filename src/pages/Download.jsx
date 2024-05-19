@@ -1,45 +1,65 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import Background from '@components/Background';
-import NavBar from '@components/NavBar';
+import NavBar from 'components/NavBar';
 
-import styles from '@styles/download.module.css';
+import styles from 'styles/download.module.css';
 
 export default function Download() {
-    let [platform, setPlatform] = useState('chrome');
+    let [platform, setPlatform] = useState('unknown');
+    let [platformExtended, setPlatformExtended] = useState('unknown');
 
-    let downloadLinks = {
-        chrome: 'https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo',
-        edge: 'https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd',
-        firefox: 'https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/'
-    };
+    useEffect(() => {
+        let agent = navigator.userAgent.toLowerCase();
+
+        let browser = agent.includes('firefox') ? 'Firefox' :
+            agent.includes('chrome') && window.chrome && !window.opr && !navigator.brave ? 'Chrome' :
+                agent.includes('edg') ? 'Edge' : 'unknown';
+
+        let extended = agent.includes('android') || agent.includes('ipad') || agent.includes('iphone') || agent.includes('ipod') ? 'Mobile' :
+            agent.includes('safari') && !navigator.brave ? 'Safari' : 'unknown';
+
+        setPlatform(browser);
+        setPlatformExtended(extended);
+    }, []);
 
     return (
         <>
-            <Background />
             <NavBar />
 
-            <div className={styles.tryBB}>Try BetterBlacket on {platform.charAt(0).toUpperCase()}{platform.slice(1)}!</div>
+            <div className={styles.header}>{platform !== 'unknown' ? <>Try BetterBlacket on {platform}!</> : <>Maybe soon...</>}</div>
+            <div className={styles.subheader}>{
+                platform !== 'unknown' ? <>Your browser has automatically been detected as {platform}.</> :
+                    platformExtended !== 'unknown' ? <>Your browser has automatically been detected as {platformExtended}.</> :
+                        <>Your browser could not be detected.</>
+            }</div>
 
-            <div className={styles.leftSites}>
-                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/2048px-Google_Chrome_icon_%28February_2022%29.svg.png' className={styles.siteIcon} style={{
-                    filter: platform === 'chrome' ? 'drop-shadow(0 0 8px white)' : ''
-                }} onClick={() => setPlatform('chrome')} />
-                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Microsoft_Edge_logo_%282019%29.svg/480px-Microsoft_Edge_logo_%282019%29.svg.png' className={styles.siteIcon} style={{
-                    filter: platform === 'edge' ? 'drop-shadow(0 0 8px white)' : ''
-                }} onClick={() => setPlatform('edge')} />
-                <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Firefox_logo%2C_2019.svg/1200px-Firefox_logo%2C_2019.svg.png' className={styles.siteIcon} style={{
-                    filter: platform === 'firefox' ? 'drop-shadow(0 0 8px white)' : ''
-                }} onClick={() => setPlatform('firefox')} />
-            </div>
-
-            <ol className={styles.tutorial}>
-                <li>Download <a className={styles.link} href={downloadLinks[platform]} target='_blank'>Tampermonkey</a> from the official link.</li>
-                <li>Visit <a className={styles.link} href='https://github.com/VillainsRule/BetterBlacket/raw/master/dist/bb.user.js' target='_blank'>this link</a> to install!</li>
-                <li>That's it! Enjoy BetterBlacket!</li>
-            </ol>
-
-            {platform !== 'chrome' ? <div className={styles.warning}>BetterBlacket was built in Chrome. Although we try to support all browsers, we can't guarentee everything works properly. If you're on another browser and find an issue, please let us know in the Discord.</div> : ''}
+            {
+                platform === 'Chrome' ? <>
+                    <ol className={styles.body}>
+                        <li>Download <a className={styles.link} href={'https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo'} target='_blank'>Tampermonkey</a> from the Chrome Web Store.</li>
+                        <li>Once downloaded, visit <a className={styles.link} href='https://github.com/VillainsRule/BetterBlacket/raw/master/dist/bb.user.js' target='_blank'>this link</a> to install. It should prompt you to "Install" or "Update".</li>
+                        <li>Click that, and reload Blacket. Enjoy BB!</li>
+                    </ol>
+                </> : platform === 'Firefox' ? <>
+                    <ol className={styles.body}>
+                        <li>Download <a className={styles.link} href={'https://addons.mozilla.org/en-US/firefox/addon/tampermonkey'} target='_blank'>Tampermonkey</a> from the Mozilla Addon Store.</li>
+                        <li>Once downloaded, visit <a className={styles.link} href='https://github.com/VillainsRule/BetterBlacket/raw/master/dist/bb.user.js' target='_blank'>this link</a> to install. It should prompt you to "Install" or "Update".</li>
+                        <li>Click that, and reload Blacket. Enjoy BB!</li>
+                    </ol>
+                </> : platform === 'Edge' ? <>
+                    <ol className={styles.body}>
+                        <li>Download <a className={styles.link} href={'https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd'} target='_blank'>Tampermonkey</a> from the Edge AddOn list.</li>
+                        <li>Once downloaded, visit <a className={styles.link} href='https://github.com/VillainsRule/BetterBlacket/raw/master/dist/bb.user.js' target='_blank'>this link</a> to install. It should prompt you to "Install" or "Update".</li>
+                        <li>Click that, and reload Blacket. Enjoy BB!</li>
+                    </ol>
+                </> : platformExtended === 'Safari' ? <>
+                    <div className={styles.centeredBody}>BetterBlacket is not currently mainly supported on Safari. Although Tampermonkey as offered on the <a className={styles.link} href='https://apps.apple.com/us/app/tampermonkey/id1482490089'>App Store</a>, it costs money there, making it a bad choice.</div>
+                </> : platformExtended === 'Mobile' ? <>
+                    <div className={styles.centeredBody}>BetterBlacket is not currently mainly supported on mobile devices. Mobile development is very different from desktop development, and we currently don't have the time nor motivation to learn it.</div>
+                </> : <>
+                    <div className={styles.centeredBody}>Whatever potato browser you're on, it doesn't support BetterBlacket. Use Chrome.</div>
+                </>
+            }
         </>
     )
 }
